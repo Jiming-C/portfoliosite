@@ -92,7 +92,7 @@ const renderRow = (title, techs) => (
           <tech.icon
             className={`text-5xl ${tech.color} transition-transform duration-200 group-hover:scale-110`}
           />
-          <span className="absolute top-full left-0 bg-neutral-800 text-sm text-white px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 mt-2 z-50 whitespace-nowrap animate-tooltip-pulse text-left">
+          <span className="absolute top-full left-1/2 -translate-x-1/2 bg-neutral-800 text-sm text-white px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 mt-2 z-50 whitespace-nowrap animate-tooltip-pulse">
             {tech.name}
           </span>
         </motion.div>

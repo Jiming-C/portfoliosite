@@ -20,7 +20,7 @@ import { VscVscode } from "react-icons/vsc";
 const iconVariants = (duration) => ({
   initial: { y: -5 },
   animate: {
-    y: [5, -5],
+    y: [10, -10],
     transition: {
       duration,
       ease: "linear",
@@ -36,9 +36,9 @@ const programmingLanguages = [
   { icon: FaPython, name: "Python", color: "text-blue-400", duration: 2.7 },
   { icon: FaJs, name: "JavaScript", color: "text-yellow-300", duration: 2.9 },
   { icon: SiC, name: "C", color: "text-blue-400", duration: 3 },
-  { icon: SiLua, name: "Lua", color: "text-blue-600", duration: 3 },
-  { icon: TbSql, name: "SQL", color: "text-blue-500", duration: 3 },
-  { icon: TbAssembly, name: "Assembly", color: "text-gray-400", duration: 3 },
+  { icon: SiLua, name: "Lua", color: "text-blue-600", duration: 3.2 },
+  { icon: TbSql, name: "SQL", color: "text-blue-500", duration: 3.4 },
+  { icon: TbAssembly, name: "Assembly", color: "text-gray-400", duration: 3.6 },
 
 ];
 
@@ -46,20 +46,20 @@ const programmingLanguages = [
 const webAndCloud = [
   { icon: RiReactjsLine, name: "React", color: "text-cyan-400", duration: 2.5 },
   { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-cyan-500", duration: 2.7 },
-  { icon: SiFlask, name: "Flask", color: "text-gray-300", duration: 2.8 },
-  { icon: TbBrandFramerMotion, name: "FramerMotion", color: "text-purple-500", duration: 2.6 },
-  { icon: VscAzure, name: "Azure", color: "text-blue-500", duration: 2.5 },
-  { icon: FaAws, name: "AWS", color: "text-orange-500", duration: 2.7 },
+  { icon: SiFlask, name: "Flask", color: "text-gray-300", duration: 2.9 },
+  { icon: TbBrandFramerMotion, name: "FramerMotion", color: "text-purple-500", duration: 3.1 },
+  { icon: VscAzure, name: "Azure", color: "text-blue-500", duration: 3.3 },
+  { icon: FaAws, name: "AWS", color: "text-orange-500", duration: 3.5 },
 ];
 
 // Section 3: Tools, IDEs & Data Science
 const toolsAndData = [
   { icon: VscVscode, name: "VS Code", color: "text-blue-500", duration: 2.5 },
   { icon: SiPycharm, name: "PyCharm", color: "text-green-500", duration: 2.7 },
-  { icon: SiEclipseide, name: "Eclipse", color: "text-purple-400", duration: 3 },
-  { icon: DiVisualstudio, name: "Visual Studio", color: "text-purple-500", duration: 3 },
-  { icon: FaGitSquare, name: "Git", color: "text-orange-600", duration: 2.9 },
-  { icon: FaLinux, name: "Linux", color: "text-yellow-500", duration: 3 },
+  { icon: SiEclipseide, name: "Eclipse", color: "text-purple-400", duration: 2.9 },
+  { icon: DiVisualstudio, name: "Visual Studio", color: "text-purple-500", duration: 3.1 },
+  { icon: FaGitSquare, name: "Git", color: "text-orange-600", duration: 3.3 },
+  { icon: FaLinux, name: "Linux", color: "text-yellow-500", duration: 3.5 },
 //   { icon: SiNumpy, name: "NumPy", color: "text-blue-500", duration: 3 },
 //   { icon: SiPandas, name: "Pandas", color: "text-red-500", duration: 3 },
 ];
@@ -92,7 +92,7 @@ const renderRow = (title, techs) => (
           <tech.icon
             className={`text-5xl ${tech.color} transition-transform duration-200 group-hover:scale-110`}
           />
-          <span className="absolute top-full left-1/2 -translate-x-1/2 bg-neutral-800 text-sm text-white px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 mt-2 z-50 whitespace-nowrap animate-tooltip-pulse">
+          <span className="absolute top-full left-1/2 -translate-x-1/2 bg-neutral-800 text-sm text-purple-400 px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 mt-2 z-50 whitespace-nowrap animate-tooltip-pulse">
             {tech.name}
           </span>
         </motion.div>

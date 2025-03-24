@@ -8,13 +8,6 @@ export const HERO_CONTENT = `I am a passionate full stack developer and Computer
 export const ABOUT_TEXT = `My journey with technology began as a curious kid who believed cartoon characters lived inside our TV—so curious, I once took it apart. That same curiosity followed me to the U.S., where gaming consoles and PCs sparked a deeper passion for understanding how things work. I taught myself to code by modding games and tinkering with my dad’s poor overworked laptop, turning every obstacle into a learning opportunity. Now studying computer science and business at the University of Maryland, I’ve built enterprise tools, websites, and booking automation for my own automotive detailing startup. What drives me is still that same spark from the TV moment—when code brings ideas to life and technology connects people.`;
 export const EXPERIENCES = [
   {
-    year: "Dec 2024 – Present",
-    role: "Navigation & Object Detection Engineer",
-    company: "Maryland Unmanned Aerial System (MUAS)",
-    description: `Developed AI-driven obstacle avoidance systems with dynamic path planning in Ardupilot, reducing collision risk by 40%. Implemented real-time object detection using YOLO and TensorFlow/OpenCV, increasing aerial analysis accuracy by 35%. Applied reinforcement learning to optimize flight paths, achieving a 28% reduction in energy consumption and maintaining a 99% mission success rate.`,
-    technologies: ["Ardupilot", "YOLO", "TensorFlow", "OpenCV", "Reinforcement Learning"],
-  },
-  {
     year: "Oct 2023 – May 2024",
     role: "Software Development Intern",
     company: "Johns Hopkins University Applied Physics Laboratory",
@@ -38,6 +31,12 @@ export const PROJECTS = [
     technologies: ["C", "Python", "TensorFlow", "Flask"],
   },
   {
+    title: "Portfolio Website",
+    image: project4,
+    description: `Designed and developed a modern, responsive portfolio website using React and Tailwind CSS, featuring smooth animations with Framer Motion. Implemented dynamic project showcases, interactive elements, and a clean user interface to effectively display technical skills and professional experience. Optimized performance through code splitting and lazy loading while maintaining SEO best practices.`,
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "Responsive Design"],
+  },
+  {
     title: "Online Order Processing System",
     image: project2,
     description: `Designed and optimized a multithreaded Java application capable of processing over 10 million orders, achieving a 40% increase in processing speed through advanced algorithms including merge sort, quicksort, and binary search. Developed a scalable architecture for real-time client reports and sales analytics.`,
@@ -48,12 +47,6 @@ export const PROJECTS = [
     image: project3,
     description: `Created a Java-based Blackjack game with AI players employing dynamic strategies, simulating over 10 million games to test hybrid card counting systems that reduced the house edge to 2.5%. Achieved a 52% player win rate through sophisticated deck simulation techniques.`,
     technologies: ["Java", "AI", "Game Development"],
-  },
-  {
-    title: "Portfolio Website",
-    image: project4,
-    description: `Designed and developed a modern, responsive portfolio website using React and Tailwind CSS, featuring smooth animations with Framer Motion. Implemented dynamic project showcases, interactive elements, and a clean user interface to effectively display technical skills and professional experience. Optimized performance through code splitting and lazy loading while maintaining SEO best practices.`,
-    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "Responsive Design"],
   },
 ];
 

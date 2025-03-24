@@ -45,9 +45,9 @@ const programmingLanguages = [
 // Section 2: Web & Cloud Technologies
 const webAndCloud = [
   { icon: RiReactjsLine, name: "React", color: "text-cyan-400", duration: 2.5 },
-  { icon: SiFlask, name: "Flask", color: "text-gray-300", duration: 2.8 },
   { icon: SiTailwindcss, name: "Tailwind CSS", color: "text-cyan-500", duration: 2.7 },
-  { icon: TbBrandFramerMotion, name: "Framer Motion", color: "text-purple-500", duration: 2.6 },
+  { icon: SiFlask, name: "Flask", color: "text-gray-300", duration: 2.8 },
+  { icon: TbBrandFramerMotion, name: "FramerMotion", color: "text-purple-500", duration: 2.6 },
   { icon: VscAzure, name: "Azure", color: "text-blue-500", duration: 2.5 },
   { icon: FaAws, name: "AWS", color: "text-orange-500", duration: 2.7 },
 ];

@@ -8,6 +8,13 @@ export const HERO_CONTENT = `I am a passionate full stack developer and Computer
 export const ABOUT_TEXT = `My journey with technology began as a curious kid who believed cartoon characters lived inside our TV—so curious, I once took it apart. That same curiosity followed me to the U.S., where gaming consoles and PCs sparked a deeper passion for understanding how things work. I taught myself to code by modding games and tinkering with my dad’s poor overworked laptop, turning every obstacle into a learning opportunity. Now studying computer science and business at the University of Maryland, I’ve built enterprise tools, websites, and booking automation for my own automotive detailing startup. What drives me is still that same spark from the TV moment—when code brings ideas to life and technology connects people.`;
 export const EXPERIENCES = [
   {
+    year: "May 2025 – Present",
+    role: "Software Engineering Intern",
+    company: "Systems Planning & Analysis",
+    description: `Supporting the U.S. Navy Nuclear Weapons Surety Program by developing full-stack operation simulation tools in C#. Collaborating via Git, Agile standups/sprints, and MVVM to accelerate feature delivery and maintainability.`,
+    technologies: ["C#", "Git", "Agile", "MVVM"],
+  },
+  {
     year: "Oct 2023 – May 2024",
     role: "Software Development Intern",
     company: "Johns Hopkins University Applied Physics Laboratory",
@@ -22,6 +29,7 @@ export const EXPERIENCES = [
     technologies: ["HTML", "CSS", "API Integration", "SEO", "Google Ads"],
   },
 ];
+
 
 export const PROJECTS = [
   {

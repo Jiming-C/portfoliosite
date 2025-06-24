@@ -29,14 +29,14 @@ const Hero = () => {
 
   useEffect(() => {
     const typed = new Typed(typedElement.current, {
-      strings: [
+    strings: [
         "Software Engineer",
         "Full Stack Developer",
         "Project Manager",
-        "Problem Solver",
-        "Business Owner",
-        "Entrepreneur",
-        "Leader",
+        "Car Enthusiast",
+        "Graphic Designer",
+        "Photographer",
+        "Leader"
       ],
       typeSpeed: 40,
       backSpeed: 50,

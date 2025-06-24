@@ -34,7 +34,7 @@ const Hero = () => {
         "Full Stack Developer",
         "Project Manager",
         "Car Enthusiast",
-        "Graphic Designer",
+        "Business Owner",
         "Photographer",
         "Leader"
       ],

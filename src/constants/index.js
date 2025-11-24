@@ -1,7 +1,7 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+import project1 from "../assets/projects/project-1.png";
+import project2 from "../assets/projects/project-2.png";
+import project3 from "../assets/projects/project-3.png";
+import project4 from "../assets/projects/project-4.png";
 
 export const HERO_CONTENT = `I am a passionate full stack developer and Computer Science major at the University of Maryland - College Park, dedicated to creating innovative, robust, and scalable applications that solve real-world problems. With hands-on experience running my own business and managing diverse projects, I blend technical expertise with strong leadership to deliver dynamic, high-performing solutions.`;
 
@@ -11,6 +11,7 @@ export const EXPERIENCES = [
     year: "May 2025 – Present",
     role: "Software Engineering Intern",
     company: "Systems Planning & Analysis",
+    logo: "SPA", // Text placeholder
     description: `Supporting the U.S. Navy Nuclear Weapons Surety Program by developing full-stack operation simulation tools in C#. Collaborating via Git, Agile standups/sprints, and MVVM to accelerate feature delivery and maintainability.`,
     technologies: ["C#", "Git", "Agile", "MVVM"],
   },
@@ -18,6 +19,7 @@ export const EXPERIENCES = [
     year: "Oct 2023 – May 2024",
     role: "Software Development Intern",
     company: "Johns Hopkins University Applied Physics Laboratory",
+    logo: "JHU APL", // Text placeholder
     description: `Engineered a C# plugin to automate workflows, increasing process efficiency by 80% while significantly reducing manual effort. Developed automation systems for enterprise software updates, diagnostics, and license management, saving over 5 hours weekly. Created detailed 3D CAD models for a Cybertruck suspension system and exoskeleton prototype using Creo Parametric.`,
     technologies: ["C#", "CAD", "Creo Parametric"],
   },
@@ -25,6 +27,7 @@ export const EXPERIENCES = [
     year: "Apr 2023 – Present",
     role: "Founder",
     company: "NIO Detailing",
+    logo: "NIO", // Text placeholder
     description: `Built and maintained a company website with automated scheduling and API integration, reducing manual booking time by 70%. Launched successful Google Ads campaigns generating over 19,000 interactions and 400+ conversions, increasing bookings by 42%. Implemented SEO strategies that boosted organic traffic by 32% within two weeks.`,
     technologies: ["HTML", "CSS", "API Integration", "SEO", "Google Ads"],
   },

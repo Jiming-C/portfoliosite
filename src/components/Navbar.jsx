@@ -1,7 +1,22 @@
-import logo from "../assets/icon.svg";
-import { FaLinkedin, FaGithub, FaFileAlt } from "react-icons/fa";
+import React from 'react';
 
 const Navbar = () => {
+  const links = [
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Technologies", id: "technologies" },
+    { name: "Experience", id: "experience" },
+    { name: "Projects", id: "projects" },
+    { name: "Contact", id: "contact" },
+  ];
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className="mb-20 flex items-center justify-between py-6 slide-down">
       {/* Logo Section */}
@@ -21,11 +36,11 @@ const Navbar = () => {
           >
             <FaFileAlt />
           </a>
-          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-300 opacity-0 whitespace-nowrap transition-opacity duration-300 group-hover:opacity-100">
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 rounded bg-[#FFFFE1] border border-black px-2 py-1 text-xs text-black shadow-md opacity-0 whitespace-nowrap transition-opacity duration-300 group-hover:opacity-100">
             Resume
           </div>
         </div>
-        
+
         {/* LinkedIn Icon with Tooltip */}
         <div className="relative group">
           <a
@@ -36,7 +51,7 @@ const Navbar = () => {
           >
             <FaLinkedin />
           </a>
-          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-300 opacity-0 whitespace-nowrap transition-opacity duration-300 group-hover:opacity-100">
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 rounded bg-[#FFFFE1] border border-black px-2 py-1 text-xs text-black shadow-md opacity-0 whitespace-nowrap transition-opacity duration-300 group-hover:opacity-100">
             LinkedIn
           </div>
         </div>
@@ -51,7 +66,7 @@ const Navbar = () => {
           >
             <FaGithub />
           </a>
-          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-300 opacity-0 whitespace-nowrap transition-opacity duration-300 group-hover:opacity-100">
+          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 rounded bg-[#FFFFE1] border border-black px-2 py-1 text-xs text-black shadow-md opacity-0 whitespace-nowrap transition-opacity duration-300 group-hover:opacity-100">
             GitHub
           </div>
         </div>
@@ -59,7 +74,7 @@ const Navbar = () => {
         {/* Email Me Button with Gradient Background */}
         <a
           href="mailto:jimingchen2015@gmail.com"
-          className="rounded animate-gradient bg-gradient-to-r from-purple-950 bg-purple-700 to-purple-500 px-4 py-2 text-sm font-medium text-white hover:opacity-80"
+          className="rounded bg-gradient-to-r from-[#0055EA] to-[#245EDC] border border-[#003C74] px-4 py-2 text-sm font-bold text-white shadow-md hover:brightness-110 active:brightness-90"
         >
           Email Me
         </a>

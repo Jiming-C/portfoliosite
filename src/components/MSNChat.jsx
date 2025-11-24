@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CONTACT } from "../constants";
-import profilePic from "../assets/profilepic.png";
-import msnIcon from "../assets/msn.ico";
+import profilePic from "../assets/images/profilepic.png";
+import msnIcon from "../assets/icons/msn.ico";
+import msnSound from "../assets/audio/msn.mp3";
 
 const MSNChat = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -64,7 +65,7 @@ const MSNChat = () => {
                                     <span className="text-[#204E80] font-bold">📱 Phone: </span>
                                     <span className="text-black">{CONTACT.phoneNo}</span>
                                 </p>
-                                <a href={`mailto:${CONTACT.email}`} className="block text-xs">
+                                <a href={`mailto:${CONTACT.email} `} className="block text-xs">
                                     <span className="text-[#204E80] font-bold">📧 Email: </span>
                                     <span className="text-blue-600 underline cursor-pointer">{CONTACT.email}</span>
                                 </a>

@@ -1,7 +1,7 @@
-import project1 from "../assets/projects/project-1.png";
-import project2 from "../assets/projects/project-2.png";
-import project3 from "../assets/projects/project-3.png";
-import project4 from "../assets/projects/project-4.png";
+import project1 from "../assets/projects/xp-car.png";
+import project2 from "../assets/projects/xp-box.png";
+import project3 from "../assets/projects/xp-ace.png";
+import project4 from "../assets/projects/xp-users.png";
 
 export const HERO_CONTENT = `I am a passionate full stack developer and Computer Science major at the University of Maryland - College Park, dedicated to creating innovative, robust, and scalable applications that solve real-world problems. With hands-on experience running my own business and managing diverse projects, I blend technical expertise with strong leadership to deliver dynamic, high-performing solutions.`;
 

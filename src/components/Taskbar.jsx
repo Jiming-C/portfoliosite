@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import WindowsLogo from './WindowsLogo';
-import wordIcon from '../assets/word.png';
-import ieIcon from '../assets/IE.ico';
+import startIcon from "../assets/icons/icon.svg";
+import ieIcon from "../assets/icons/IE.ico";
+import msnIcon from "../assets/icons/msn.ico";
+import wordIcon from "../assets/images/word.png";
 
 const Taskbar = ({ windows = {}, onToggleWindow }) => {
     const [time, setTime] = useState(new Date());
@@ -35,15 +37,13 @@ const Taskbar = ({ windows = {}, onToggleWindow }) => {
                         <button
                             key={id}
                             onClick={() => onToggleWindow(id)}
-                            className={`
-                                h-[22px] px-2 max-w-[160px] flex-1 flex items-center gap-2 rounded-[2px] text-white text-xs text-left truncate
+                            className={`h-[22px] px-2 max-w-[160px] flex-1 flex items-center gap-2 rounded-[2px] text-white text-xs text-left truncate
                                 ${state.isFlashing
                                     ? 'xp-flash bg-[#E57A00]'
                                     : state.isMinimized
                                         ? 'bg-[#3C81F3] hover:bg-[#5394F6] shadow-[inset_0_0_1px_rgba(255,255,255,0.5)]'
                                         : 'bg-[#1E52B7] shadow-[inset_1px_1px_2px_rgba(0,0,0,0.5)]'
-                                }
-                            `}
+                                }`}
                         >
                             {/* Icon */}
                             {id === 'resume' ? (

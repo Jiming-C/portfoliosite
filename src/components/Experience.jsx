@@ -1,6 +1,6 @@
 import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
-import fileIcon from "../assets/file.ico";
+import fileIcon from "../assets/icons/file.ico";
 
 const Experience = () => {
   return (

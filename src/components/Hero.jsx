@@ -1,8 +1,8 @@
 // src/components/Hero.jsx
 import React, { useEffect, useRef } from "react";
 import { HERO_CONTENT } from "../constants";
-import profilePic from "../assets/profilepic.png";
-import usersIcon from "../assets/users.ico";
+import profilePic from "../assets/images/profilepic.png";
+import usersIcon from "../assets/icons/users.ico";
 import { motion } from "framer-motion";
 import Typed from "typed.js";
 

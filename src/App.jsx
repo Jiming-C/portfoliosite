@@ -13,8 +13,8 @@ import DesktopIcon from "./components/DesktopIcon";
 import InternetExplorer from "./components/InternetExplorer";
 import BootScreen from "./components/BootScreen";
 import MSNChat from "./components/MSNChat";
-import blissWallpaper from "./assets/bliss.png";
-import ieIcon from "./assets/IE.ico";
+import blissWallpaper from "./assets/images/bliss.png";
+import ieIcon from "./assets/icons/IE.ico";
 
 // Placeholder Icons (SVGs or Divs)
 const MyComputerIcon = () => (

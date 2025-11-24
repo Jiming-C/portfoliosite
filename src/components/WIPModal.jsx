@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import errorIcon from '../assets/stop.ico'; // Using stop icon as a generic alert icon
+import errorIcon from "../assets/icons/stop.ico"; // Using stop icon as a generic alert icon
 
 const WIPModal = () => {
     const [isOpen, setIsOpen] = useState(true);

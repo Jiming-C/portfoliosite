@@ -1,12 +1,12 @@
 import React from 'react';
-import bckIcon from '../assets/bck.ico';
-import fwdIcon from '../assets/fwd.ico';
-import refreshIcon from '../assets/refresh.ico';
-import stopIcon from '../assets/stop.ico';
-import homeIcon from '../assets/home.ico';
-import fileIcon from '../assets/file.ico';
-import usersIcon from '../assets/users.ico';
-import ieIcon from '../assets/IE.ico';
+import backIcon from "../assets/icons/bck.ico";
+import forwardIcon from "../assets/icons/fwd.ico";
+import stopIcon from "../assets/icons/stop.ico";
+import refreshIcon from "../assets/icons/refresh.ico";
+import homeIcon from "../assets/icons/home.ico";
+import fileIcon from '../assets/icons/file.ico';
+import usersIcon from '../assets/icons/users.ico';
+import ieIcon from '../assets/icons/IE.ico';
 
 const InternetExplorer = ({ children }) => {
     return (
@@ -14,8 +14,8 @@ const InternetExplorer = ({ children }) => {
             {/* Standard Buttons Toolbar */}
             <div className="flex items-center px-1 py-1 gap-0 border-b border-[#D1D1D1] bg-[#ECE9D8] shadow-[inset_0_-1px_0_rgba(255,255,255,0.5)]">
                 <div className="flex items-center gap-0">
-                    <ToolbarButton icon={bckIcon} label="Back" showText={true} arrow={true} />
-                    <ToolbarButton icon={fwdIcon} label="Forward" showText={false} arrow={true} />
+                    <ToolbarButton icon={backIcon} label="Back" showText={true} arrow={true} />
+                    <ToolbarButton icon={forwardIcon} label="Forward" showText={false} arrow={true} />
                     <ToolbarButton icon={stopIcon} label="Stop" showText={false} />
                     <ToolbarButton icon={refreshIcon} label="Refresh" showText={false} />
                     <ToolbarButton icon={homeIcon} label="Home" showText={false} />

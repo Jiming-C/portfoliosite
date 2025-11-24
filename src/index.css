@@ -24,7 +24,7 @@ body {
   padding: 0;
   overflow: hidden;
   /* Prevent page scrolling - only window content scrolls */
-  background: url('./assets/bliss.png') no-repeat center center fixed;
+  background: url('./assets/images/bliss.png') no-repeat center center fixed;
   background-size: cover;
   /* XP Bliss wallpaper */
   color: black;

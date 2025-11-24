@@ -15,7 +15,6 @@ import BootScreen from "./components/BootScreen";
 import MSNChat from "./components/MSNChat";
 import blissWallpaper from "./assets/bliss.png";
 import ieIcon from "./assets/IE.ico";
-import WIPModal from "./components/WIPModal";
 
 // Placeholder Icons (SVGs or Divs)
 const MyComputerIcon = () => (
@@ -137,8 +136,6 @@ const App = () => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <WIPModal />
-
       {/* Desktop Icons Removed - Full Screen Experience */}
 
       {/* Main Window - Internet Explorer (Full Screen) */}

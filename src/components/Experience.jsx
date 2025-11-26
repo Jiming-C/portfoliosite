@@ -5,9 +5,9 @@ import { FaArrowLeft, FaArrowRight, FaChevronUp, FaFileAlt, FaWrench, FaDesktop,
 
 const Experience = () => {
   return (
-    <div id="experience" className="pb-4 px-4">
+    <div id="experience" className="h-full w-full px-6 lg:px-32 py-4 lg:py-8">
       {/* Windows Explorer Theme */}
-      <div className="mt-8 bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md">
+      <div className="bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md h-full flex flex-col">
         {/* Title Bar */}
         <div className="h-[30px] bg-gradient-to-b from-[#0058EE] via-[#3593FF] to-[#288EFF] px-2 flex items-center justify-between shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
           <div className="flex items-center gap-2">
@@ -52,11 +52,11 @@ const Experience = () => {
           </div>
           <div className="h-6 border-l border-gray-400 mx-1 flex-shrink-0"></div>
           <div className="bg-white border border-[#7F9DB9] px-2 py-0.5 w-full lg:w-64 text-xs font-tahoma text-black flex items-center overflow-hidden whitespace-nowrap">
-            Address <span className="ml-2 text-gray-600 truncate">C:\Documents and Settings\Jiming\My Documents\Experience</span>
+            Address <span className="ml-2 text-gray-600 truncate">C:\Users\Jiming\Experience</span>
           </div>
         </div>
 
-        <div className="flex">
+        <div className="flex flex-1 overflow-hidden">
           {/* Sidebar */}
           <div className="w-48 bg-gradient-to-b from-[#7BA2E7] to-[#6375D6] p-3 hidden lg:block">
             <div className="bg-white rounded-t-md overflow-hidden mb-4">
@@ -99,15 +99,7 @@ const Experience = () => {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 bg-white p-4">
-            <motion.h2
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: -100 }}
-              transition={{ duration: 1.5 }}
-              className="mb-6 text-2xl font-tahoma text-gray-800 border-b border-gray-300 pb-2"
-            >
-              Experience
-            </motion.h2>
+          <div className="flex-1 bg-white p-4 overflow-y-auto">
             <div className="space-y-4">
               {EXPERIENCES.map((experience, index) => (
                 <motion.div

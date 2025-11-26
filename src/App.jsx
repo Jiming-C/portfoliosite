@@ -159,16 +159,26 @@ const App = () => {
           // Remove close/minimize functionality for the main window to keep it "always open"
           onClose={() => { }}
         >
-          <InternetExplorer>
-            <div className="px-4 lg:px-8 pb-20">
-              <Navbar />
-              <Hero />
-              <About />
-              <Technologies />
-              <Experience />
-              <Projects />
-              <Analytics />
+          <InternetExplorer contentClassName="absolute inset-0 bg-white flex flex-col">
+            <Navbar />
+            <div className="flex-1 flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth">
+              <div id="home" className="min-w-full h-full snap-center overflow-y-auto bg-white">
+                <Hero />
+              </div>
+              <div id="about" className="min-w-full h-full snap-center overflow-y-auto bg-white">
+                <About />
+              </div>
+              <div id="technologies" className="min-w-full h-full snap-center overflow-y-auto bg-white">
+                <Technologies />
+              </div>
+              <div id="experience" className="min-w-full h-full snap-center overflow-y-auto bg-white">
+                <Experience />
+              </div>
+              <div id="projects" className="min-w-full h-full snap-center overflow-y-auto bg-white">
+                <Projects />
+              </div>
             </div>
+            <Analytics />
           </InternetExplorer>
         </XPWindow>
       )}

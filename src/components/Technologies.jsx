@@ -96,9 +96,9 @@ const renderRow = (title, techs) => (
 
 const TechnologiesComponent = () => {
   return (
-    <div id="technologies" className="pb-4 px-4 overflow-visible">
+    <div id="technologies" className="h-full w-full px-6 lg:px-32 py-4 lg:py-8 overflow-visible">
       {/* Control Panel Theme */}
-      <div className="mt-8 bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md">
+      <div className="bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md h-full flex flex-col">
         {/* Title Bar */}
         <div className="h-[30px] bg-gradient-to-b from-[#0058EE] via-[#3593FF] to-[#288EFF] px-2 flex items-center justify-between shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
           <div className="flex items-center gap-2">
@@ -131,7 +131,7 @@ const TechnologiesComponent = () => {
           <span>Help</span>
         </div>
 
-        <div className="flex">
+        <div className="flex flex-1 overflow-hidden">
           {/* Sidebar */}
           <div className="w-48 bg-gradient-to-b from-[#7BA2E7] to-[#6375D6] p-3 hidden lg:block">
             <div className="bg-white rounded-t-md overflow-hidden mb-4">
@@ -170,15 +170,7 @@ const TechnologiesComponent = () => {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 bg-white p-6">
-            <motion.h2
-              whileInView={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: -50 }}
-              transition={{ duration: 1 }}
-              className="mb-6 text-2xl font-tahoma text-gray-800"
-            >
-              Pick a category
-            </motion.h2>
+          <div className="flex-1 bg-white p-6 overflow-y-auto">
             <div className="space-y-4">
               {renderRow("Programming Languages", programmingLanguages)}
               {renderRow("Web & Cloud Technologies", webAndCloud)}

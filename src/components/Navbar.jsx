@@ -3,7 +3,7 @@ import React from 'react';
 const Navbar = () => {
   const links = [
     { name: "About", id: "about" },
-    { name: "Technologies", id: "technologies" },
+    { name: "Skills", id: "technologies" },
     { name: "Experience", id: "experience" },
     { name: "Projects", id: "projects" },
   ];

@@ -6,9 +6,9 @@ import { FaFolderOpen } from "react-icons/fa";
 
 const Projects = () => {
   return (
-    <div id="projects" className="pb-4 px-4">
+    <div id="projects" className="h-full w-full px-6 lg:px-32 py-4 lg:py-8">
       {/* XP Window Style Container - Static for embedding in page */}
-      <div className="mt-8 bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md flex flex-col h-[800px]">
+      <div className="bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md flex flex-col h-full">
         {/* Title Bar */}
         <div className="h-[30px] bg-gradient-to-b from-[#0058EE] via-[#3593FF] to-[#288EFF] px-2 flex items-center justify-between shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] shrink-0">
           <div className="flex items-center gap-2">
@@ -44,7 +44,7 @@ const Projects = () => {
         <div className="bg-[#ECE9D8] border-b border-[#D1D1D1] px-2 py-1 flex items-center gap-2 shrink-0">
           <span className="text-xs text-[#444]">Address</span>
           <div className="flex-1 bg-white border border-[#7F9DB9] h-[20px] flex items-center px-1 text-xs">
-            C:\Documents and Settings\Jiming\My Documents\My Projects
+            C:\Documents\Jiming\Projects
           </div>
         </div>
 

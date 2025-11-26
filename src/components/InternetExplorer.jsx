@@ -8,7 +8,7 @@ import fileIcon from '../assets/icons/file.ico';
 import usersIcon from '../assets/icons/users.ico';
 import ieIcon from '../assets/icons/IE.ico';
 
-const InternetExplorer = ({ children }) => {
+const InternetExplorer = ({ children, contentClassName }) => {
     return (
         <div className="flex flex-col h-full bg-[#ECE9D8]">
             {/* Standard Buttons Toolbar */}
@@ -69,7 +69,7 @@ const InternetExplorer = ({ children }) => {
 
             {/* Content */}
             <div className="flex-1 overflow-hidden relative border-t border-[#828790]">
-                <div className="absolute inset-0 bg-white overflow-auto">
+                <div className={contentClassName || "absolute inset-0 bg-white overflow-auto"}>
                     {children}
                 </div>
             </div>

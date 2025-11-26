@@ -41,9 +41,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <div id="home" className="pb-4 lg:mb-8 px-2 lg:px-4">
+    <div id="home" className="h-full w-full px-6 lg:px-32 py-4 lg:py-8">
       {/* User Accounts Control Panel Theme */}
-      <div className="max-w-full lg:max-w-2xl mt-8 bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md">
+      <div className="w-full h-full bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md flex flex-col">
         {/* Title Bar */}
         <div className="h-[30px] bg-gradient-to-b from-[#0058EE] via-[#3593FF] to-[#288EFF] px-2 flex items-center justify-between shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
           <div className="flex items-center gap-2">
@@ -73,7 +73,7 @@ const Hero = () => {
         </div>
 
         {/* Content */}
-        <div className="p-8 bg-white min-h-[450px]">
+        <div className="p-8 bg-white flex-1 overflow-y-auto">
           {/* Heading */}
           <motion.h2
             variants={container(0)}

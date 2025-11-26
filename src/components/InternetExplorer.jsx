@@ -1,9 +1,8 @@
 import React from 'react';
-import { FaFolderOpen, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaFolderOpen, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import ieIcon from '../assets/icons/IE.ico';
 import backIcon from '../assets/icons/xp/back.png';
 import forwardIcon from '../assets/icons/xp/forward.png';
-import mailIcon from '../assets/icons/xp/mail.png';
 
 const InternetExplorer = ({ children, contentClassName, onBack, onForward }) => {
     return (
@@ -50,7 +49,7 @@ const InternetExplorer = ({ children, contentClassName, onBack, onForward }) => 
                         onClick={() => window.open("https://github.com/jimingc", "_blank")}
                     />
                     <ToolbarButton
-                        icon={<img src={mailIcon} alt="Email" className="w-6 h-6 object-contain drop-shadow-sm" />} // XP Mail Icon
+                        icon={<FaEnvelope className="text-[#333] text-[20px] drop-shadow-sm" />} // React Icon for Email
                         label="Email"
                         showText={true}
                         onClick={() => window.location.href = "mailto:jimingchen2015@gmail.com"}

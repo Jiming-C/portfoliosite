@@ -3,9 +3,13 @@ import project2 from "../assets/projects/xp-box.png";
 import project3 from "../assets/projects/xp-ace.png";
 import project4 from "../assets/projects/xp-users.png";
 
-export const HERO_CONTENT = `I am a passionate full stack developer and Computer Science major at the University of Maryland - College Park, dedicated to creating innovative, robust, and scalable applications that solve real-world problems. With hands-on experience running my own business and managing diverse projects, I blend technical expertise with strong leadership to deliver dynamic, high-performing solutions.`;
+export const HERO_CONTENT = `I am a passionate full stack developer and Computer Science major & Business minor at the University of Maryland - College Park, dedicated to creating innovative, robust, and scalable applications that solve real-world problems. With hands-on experience running my own business and managing diverse projects, I blend technical expertise with strong leadership to deliver dynamic, high-performing solutions.`;
 
-export const ABOUT_TEXT = `My journey with technology began as a curious kid who believed cartoon characters lived inside our TV—so curious, I once took it apart. That same curiosity followed me to the U.S., where gaming consoles and PCs sparked a deeper passion for understanding how things work. I taught myself to code by modding games and tinkering with my dad’s poor overworked laptop, turning every obstacle into a learning opportunity. Now studying computer science and business at the University of Maryland, I’ve built enterprise tools, websites, and booking automation for my own automotive detailing startup. What drives me is still that same spark from the TV moment—when code brings ideas to life and technology connects people.`;
+export const ABOUT_TEXT = `My journey with technology started when I was a kid who honestly believed cartoon characters lived inside our TV. I was so sure that I actually took the TV apart to try and find them.
+
+That curiosity followed me to the U.S., where gaming consoles and PCs made me want to understand how everything worked. I taught myself to code by modding games and tinkering with my dad’s overworked Windows XP laptop, which looked just like this one and inspired the theme of this website. Every glitch or mistake turned into a new lesson.
+
+Now, as a computer science and business student at the University of Maryland, I’ve built enterprise tools, websites, and booking automation for my own automotive detailing startup. What still drives me is that same “TV moment” feeling: seeing ideas turn into real things through code and using technology to bring people closer together.`;
 export const EXPERIENCES = [
   {
     year: "May 2025 – Present",

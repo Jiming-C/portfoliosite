@@ -7,15 +7,48 @@ import msnSound from "../assets/audio/msn.mp3";
 
 const MSNChat = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [messages, setMessages] = useState([]);
+    const [isTyping, setIsTyping] = useState(false);
 
+    // Initial Auto-Open
     useEffect(() => {
-        // Auto-open chat window after 8 seconds
         const timer = setTimeout(() => {
             setIsOpen(true);
         }, 8000);
-
         return () => clearTimeout(timer);
     }, []);
+
+    // Message Sequence Logic
+    useEffect(() => {
+        if (isOpen && messages.length === 0) {
+            // Start sequence
+            const sequence = async () => {
+                // Message 1
+                setIsTyping(true);
+                await new Promise(r => setTimeout(r, 1500));
+                setIsTyping(false);
+                setMessages(prev => [...prev, { type: 'text', content: "Hey there! Thanks for checking out my portfolio." }]);
+
+                // Message 2
+                setIsTyping(true);
+                await new Promise(r => setTimeout(r, 2000));
+                setIsTyping(false);
+                setMessages(prev => [...prev, { type: 'text', content: "If you want to get in touch, you can reach me here:" }]);
+
+                // Message 3 (Contact Card)
+                setIsTyping(true);
+                await new Promise(r => setTimeout(r, 1000));
+                setIsTyping(false);
+                setMessages(prev => [...prev, { type: 'contact' }]);
+
+                // Auto-Minimize
+                await new Promise(r => setTimeout(r, 8000));
+                setIsOpen(false);
+            };
+
+            sequence();
+        }
+    }, [isOpen]);
 
     return (
         <div className="fixed bottom-20 right-7 z-30 flex flex-col items-end gap-2">
@@ -50,26 +83,31 @@ const MSNChat = () => {
                         </div>
 
                         {/* Chat Area */}
-                        <div className="p-3 bg-white h-64 border-b border-[#A0C3E3] overflow-y-auto font-tahoma text-sm">
-                            <div className="mb-3">
-                                <p className="text-gray-500 text-xs mb-0.5">Jiming says:</p>
-                                <p className="text-black">Hey there! Thanks for checking out my portfolio.</p>
-                            </div>
-                            <div className="mb-3">
-                                <p className="text-gray-500 text-xs mb-0.5">Jiming says:</p>
-                                <p className="text-black">If you want to get in touch, you can reach me here:</p>
-                            </div>
-
-                            <div className="ml-2 mt-4 p-2 bg-[#F0F0F0] rounded-sm border border-[#D1D1D1]">
-                                <p className="mb-1 text-xs">
-                                    <span className="text-[#204E80] font-bold">📱 Phone: </span>
-                                    <span className="text-black">{CONTACT.phoneNo}</span>
-                                </p>
-                                <a href={`mailto:${CONTACT.email} `} className="block text-xs">
-                                    <span className="text-[#204E80] font-bold">📧 Email: </span>
-                                    <span className="text-blue-600 underline cursor-pointer">{CONTACT.email}</span>
-                                </a>
-                            </div>
+                        <div className="p-3 bg-white h-64 border-b border-[#A0C3E3] overflow-y-auto font-tahoma text-sm flex flex-col gap-3">
+                            {messages.map((msg, index) => (
+                                <div key={index} className="animate-fade-in">
+                                    {msg.type === 'text' ? (
+                                        <>
+                                            <p className="text-gray-500 text-xs mb-0.5">Jiming says:</p>
+                                            <p className="text-black">{msg.content}</p>
+                                        </>
+                                    ) : (
+                                        <div className="ml-2 mt-2 p-2 bg-[#F0F0F0] rounded-sm border border-[#D1D1D1]">
+                                            <p className="mb-1 text-xs">
+                                                <span className="text-[#204E80] font-bold">📱 Phone: </span>
+                                                <span className="text-black">{CONTACT.phoneNo}</span>
+                                            </p>
+                                            <a href={`mailto:${CONTACT.email} `} className="block text-xs">
+                                                <span className="text-[#204E80] font-bold">📧 Email: </span>
+                                                <span className="text-blue-600 underline cursor-pointer">{CONTACT.email}</span>
+                                            </a>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                            {isTyping && (
+                                <div className="text-gray-400 text-xs italic">Jiming is typing...</div>
+                            )}
                         </div>
 
                         {/* Input Area */}
@@ -93,7 +131,7 @@ const MSNChat = () => {
                 className="px-3 py-2 bg-gradient-to-b from-[#ECE9D8] to-[#D6D3CE] border-2 border-white border-r-[#808080] border-b-[#808080] shadow-md hover:brightness-105 active:border-[#808080] active:border-r-white active:border-b-white flex items-center gap-2 rounded-sm"
             >
                 <img src={msnIcon} alt="MSN Messenger" className="w-5 h-5 object-contain" />
-                <span className="font-tahoma text-xs text-black whitespace-nowrap">MSN Messenger</span>
+                <span className="font-tahoma text-xs text-black whitespace-nowrap">Contact Me</span>
             </motion.button>
         </div>
     );

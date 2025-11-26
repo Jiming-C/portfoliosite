@@ -3,7 +3,7 @@ import About from "./components/About";
 // import Contact from "./components/Contact"; // Removed static contact
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar"; // Removed as per request
 import Projects from "./components/Project";
 import Technologies from "./components/Technologies";
 import { Analytics } from "@vercel/analytics/react"
@@ -59,23 +59,34 @@ const App = () => {
     browser: { isOpen: true, isMinimized: false }
   });
 
-  // Mobile Detection
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const scrollContainerRef = useRef(null);
 
+  // Swipe Hint Animation (All devices)
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
 
-  // Boot Animation Timer
-  useEffect(() => {
-    // const timer = setTimeout(() => {
-    //   setIsLoading(false);
-    // }, 4000); // 4 seconds boot time
-    // return () => clearTimeout(timer);
+      // Delay slightly to ensure render
+      const startTimer = setTimeout(() => {
+        // Scroll to 25% of the width
+        container.scrollTo({
+          left: window.innerWidth * 0.25,
+          behavior: 'smooth'
+        });
+
+        // Snap back after a short delay
+        const snapBackTimer = setTimeout(() => {
+          container.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+          });
+        }, 800);
+
+        return () => clearTimeout(snapBackTimer);
+      }, 1500);
+
+      return () => clearTimeout(startTimer);
+    }
   }, []);
 
   // Resume Auto-Open Logic Removed (It's always "open" in taskbar now)
@@ -122,6 +133,18 @@ const App = () => {
     setWindows(prev => ({ ...prev, [id]: { isOpen: true, isMinimized: false } }));
   };
 
+  const handleScrollBack = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollForward = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+    }
+  };
+
   // if (isLoading) {
   //   return <BootScreen />;
   // }
@@ -146,7 +169,7 @@ const App = () => {
           icon={ieIcon}
           className=""
           defaultPosition={{ x: 0, y: 0 }}
-          defaultSize={{ width: '100%', height: 'calc(100% - 30px)' }} // Full width/height minus taskbar
+          defaultSize={{ width: '100%', height: 'calc(100dvh - 30px)' }} // Full width/height minus taskbar
           style={{
             zIndex: 10,
             display: windows.browser.isMinimized ? 'none' : 'flex',
@@ -154,14 +177,18 @@ const App = () => {
             top: 0,
             left: 0,
             width: '100%',
-            height: 'calc(100% - 30px)' // Adjust for taskbar height
+            height: 'calc(100dvh - 30px)' // Adjust for taskbar height
           }}
           // Remove close/minimize functionality for the main window to keep it "always open"
           onClose={() => { }}
         >
-          <InternetExplorer contentClassName="absolute inset-0 bg-white flex flex-col">
-            <Navbar />
-            <div className="flex-1 flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth">
+          <InternetExplorer
+            contentClassName="absolute inset-0 bg-white flex flex-col"
+            onBack={handleScrollBack}
+            onForward={handleScrollForward}
+          >
+            {/* Navbar Removed */}
+            <div ref={scrollContainerRef} className="flex-1 flex flex-row overflow-x-auto snap-x snap-mandatory scroll-smooth">
               <div id="home" className="min-w-full h-full snap-center overflow-y-auto bg-white">
                 <Hero />
               </div>
@@ -196,4 +223,4 @@ const App = () => {
   );
 };
 
-export default App; 
+export default App;

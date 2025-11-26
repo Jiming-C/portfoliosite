@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaFolderPlus, FaGlobe, FaEnvelope, FaHome, FaDesktop, FaFolder, FaNetworkWired, FaInfoCircle, FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 const XPExplorerSidebar = () => {
     return (
@@ -14,30 +15,30 @@ const XPExplorerSidebar = () => {
                 }
                 defaultOpen={true}
             >
-                <SidebarItem icon="📁" label="Make a new folder" />
-                <SidebarItem icon="🌏" label="Publish this folder to the Web" />
-                <SidebarItem icon="✉️" label="E-mail this folder's files" />
+                <SidebarItem icon={<FaFolderPlus />} label="Make a new folder" />
+                <SidebarItem icon={<FaGlobe />} label="Publish this folder to the Web" />
+                <SidebarItem icon={<FaEnvelope />} label="E-mail this folder's files" />
             </SidebarSection>
 
             <SidebarSection
                 title="Other Places"
                 icon={
                     <div className="w-4 h-4 bg-[#ECE9D8] border border-[#828790] rounded-sm flex items-center justify-center text-[10px]">
-                        🏠
+                        <FaHome className="text-black" />
                     </div>
                 }
                 defaultOpen={true}
             >
-                <SidebarItem icon="💻" label="My Computer" />
-                <SidebarItem icon="📄" label="My Documents" />
-                <SidebarItem icon="🤝" label="My Network Places" />
+                <SidebarItem icon={<FaDesktop />} label="My Computer" />
+                <SidebarItem icon={<FaFolder />} label="My Documents" />
+                <SidebarItem icon={<FaNetworkWired />} label="My Network Places" />
             </SidebarSection>
 
             <SidebarSection
                 title="Details"
                 icon={
                     <div className="w-4 h-4 bg-[#ECE9D8] border border-[#828790] rounded-sm flex items-center justify-center text-[10px]">
-                        ℹ️
+                        <FaInfoCircle className="text-black" />
                     </div>
                 }
                 defaultOpen={true}
@@ -66,7 +67,7 @@ const SidebarSection = ({ title, icon, children, defaultOpen = true }) => {
                 <span className="text-white font-bold text-[11px] font-tahoma">{title}</span>
                 <div className="w-4 h-4 bg-white/20 rounded-full flex items-center justify-center border border-white/40">
                     <span className="text-white text-[10px] font-bold leading-none">
-                        {isOpen ? '▲' : '▼'}
+                        {isOpen ? <FaChevronUp size={8} /> : <FaChevronDown size={8} />}
                     </span>
                 </div>
             </div>
@@ -97,7 +98,7 @@ const SidebarItem = ({ icon, label, onClick }) => {
             className="flex items-center gap-2 px-1 py-0.5 hover:underline cursor-pointer group"
             onClick={onClick}
         >
-            <span className="text-base">{icon}</span>
+            <span className="text-base text-[#215DC6] group-hover:text-[#0000FF]">{icon}</span>
             <span className="text-[11px] text-[#204E80] font-tahoma group-hover:text-[#0000FF]">{label}</span>
         </div>
     );

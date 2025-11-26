@@ -1,6 +1,7 @@
 import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
 import fileIcon from "../assets/icons/file.ico";
+import { FaArrowLeft, FaArrowRight, FaChevronUp, FaFileAlt, FaWrench, FaDesktop, FaFolder, FaBriefcase } from "react-icons/fa";
 
 const Experience = () => {
   return (
@@ -10,7 +11,7 @@ const Experience = () => {
         {/* Title Bar */}
         <div className="h-[30px] bg-gradient-to-b from-[#0058EE] via-[#3593FF] to-[#288EFF] px-2 flex items-center justify-between shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-white rounded-sm opacity-50"></div>
+            <FaBriefcase className="text-white drop-shadow-md" />
             <span className="text-white font-bold text-[13px] tracking-wide drop-shadow-[1px_1px_1px_rgba(0,0,0,0.5)]" style={{ fontFamily: 'Tahoma' }}>My Work History</span>
           </div>
           <div className="flex gap-1">
@@ -42,8 +43,12 @@ const Experience = () => {
         {/* Toolbar (Simplified) */}
         <div className="bg-[#ECE9D8] border-b border-[#D1D1D1] px-2 py-2 flex gap-2 items-center overflow-x-auto">
           <div className="flex gap-1 flex-shrink-0">
-            <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-[10px] font-bold">←</div>
-            <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-[10px] font-bold">→</div>
+            <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-[10px] font-bold border border-green-600 shadow-sm">
+              <FaArrowLeft />
+            </div>
+            <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-[10px] font-bold border border-green-600 shadow-sm">
+              <FaArrowRight />
+            </div>
           </div>
           <div className="h-6 border-l border-gray-400 mx-1 flex-shrink-0"></div>
           <div className="bg-white border border-[#7F9DB9] px-2 py-0.5 w-full lg:w-64 text-xs font-tahoma text-black flex items-center overflow-hidden whitespace-nowrap">
@@ -57,14 +62,18 @@ const Experience = () => {
             <div className="bg-white rounded-t-md overflow-hidden mb-4">
               <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 font-bold text-[#215DC6] text-xs flex justify-between items-center cursor-pointer">
                 <span>System Tasks</span>
-                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px]">^</div>
+                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px] bg-white/50">
+                  <FaChevronUp size={10} />
+                </div>
               </div>
               <div className="p-3 bg-[#D6DFF7]">
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs">
-                  <span className="text-lg">📄</span> View system info
+                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
+                  <FaFileAlt className="text-lg group-hover:text-[#0000FF]" />
+                  <span>View system info</span>
                 </div>
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs">
-                  <span className="text-lg">🔧</span> Change settings
+                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
+                  <FaWrench className="text-lg group-hover:text-[#0000FF]" />
+                  <span>Change settings</span>
                 </div>
               </div>
             </div>
@@ -72,14 +81,18 @@ const Experience = () => {
             <div className="bg-white rounded-t-md overflow-hidden mb-4">
               <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 font-bold text-[#215DC6] text-xs flex justify-between items-center cursor-pointer">
                 <span>Other Places</span>
-                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px]">^</div>
+                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px] bg-white/50">
+                  <FaChevronUp size={10} />
+                </div>
               </div>
               <div className="p-3 bg-[#D6DFF7]">
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs">
-                  <span className="text-lg">💻</span> My Computer
+                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
+                  <FaDesktop className="text-lg group-hover:text-[#0000FF]" />
+                  <span>My Computer</span>
                 </div>
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs">
-                  <span className="text-lg">📂</span> My Documents
+                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
+                  <FaFolder className="text-lg group-hover:text-[#0000FF]" />
+                  <span>My Documents</span>
                 </div>
               </div>
             </div>

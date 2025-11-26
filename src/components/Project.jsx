@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from "framer-motion";
+import React from 'react';
+import { motion } from "framer-motion";
 import { PROJECTS } from "../constants";
 import XPExplorerSidebar from "./XPExplorerSidebar";
-import XPWindow from "./XPWindow";
+import { FaFolderOpen } from "react-icons/fa";
 
 const Projects = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-
   return (
     <div id="projects" className="pb-4 px-4">
       {/* XP Window Style Container - Static for embedding in page */}
-      <div className="mt-8 bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md flex flex-col h-[600px]">
+      <div className="mt-8 bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md flex flex-col h-[800px]">
         {/* Title Bar */}
         <div className="h-[30px] bg-gradient-to-b from-[#0058EE] via-[#3593FF] to-[#288EFF] px-2 flex items-center justify-between shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] shrink-0">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-white rounded-sm opacity-50"></div>
+            <FaFolderOpen className="text-white drop-shadow-md" />
             <span className="text-white font-bold text-[13px] tracking-wide drop-shadow-[1px_1px_1px_rgba(0,0,0,0.5)]" style={{ fontFamily: 'Tahoma' }}>My Projects</span>
           </div>
           <div className="flex gap-1">
@@ -42,7 +40,7 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Address Bar (Optional, adds to the look) */}
+        {/* Address Bar */}
         <div className="bg-[#ECE9D8] border-b border-[#D1D1D1] px-2 py-1 flex items-center gap-2 shrink-0">
           <span className="text-xs text-[#444]">Address</span>
           <div className="flex-1 bg-white border border-[#7F9DB9] h-[20px] flex items-center px-1 text-xs">
@@ -55,82 +53,60 @@ const Projects = () => {
           {/* Sidebar */}
           <XPExplorerSidebar />
 
-          {/* Grid View */}
+          {/* Details View */}
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-white">
             {/* Grid Header */}
-            <div className="px-4 py-2 border-b border-[#D1D1D1] bg-white shrink-0">
-              <span className="font-bold text-sm text-[#444]">My Projects</span>
+            <div className="px-4 py-2 border-b border-[#D1D1D1] bg-white shrink-0 flex gap-4 text-xs text-[#444] font-tahoma select-none">
+              <div className="w-1/3 border-r border-[#D1D1D1] px-1">Name</div>
+              <div className="w-1/3 border-r border-[#D1D1D1] px-1">Description</div>
+              <div className="w-1/3 px-1">Technologies</div>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-4">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            <div className="flex-1 overflow-y-auto p-2 bg-white">
+              <div className="space-y-1">
                 {PROJECTS.map((project, index) => (
-                  <div
+                  <motion.div
                     key={index}
-                    className="flex flex-col items-center gap-1 group cursor-pointer w-24"
-                    onClick={() => setSelectedProject(project)}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    className="flex flex-col md:flex-row gap-4 p-2 hover:bg-[#E8F1FC] border border-transparent hover:border-[#7F9DB9] rounded-sm group"
                   >
-                    {/* Icon */}
-                    <div className="relative">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-12 h-12 object-contain drop-shadow-md group-hover:brightness-110"
-                      />
+                    {/* Image & Title */}
+                    <div className="w-full md:w-1/3 flex gap-3 items-start">
+                      <div className="w-16 h-16 shrink-0 border border-[#D1D1D1] bg-white p-1">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-sm text-black group-hover:underline cursor-pointer">{project.title}</h3>
+                        <span className="text-xs text-gray-500">File Folder</span>
+                      </div>
                     </div>
-                    {/* Label */}
-                    <span className="text-[11px] text-center text-black group-hover:bg-[#316AC5] group-hover:text-white px-1 rounded-[2px] line-clamp-2 leading-tight">
-                      {project.title}
-                    </span>
-                  </div>
+
+                    {/* Description */}
+                    <div className="w-full md:w-1/3 text-xs text-black font-tahoma leading-relaxed">
+                      {project.description}
+                    </div>
+
+                    {/* Technologies */}
+                    <div className="w-full md:w-1/3 flex flex-wrap gap-1 content-start">
+                      {project.technologies.map((tech, i) => (
+                        <span key={i} className="px-1.5 py-0.5 bg-[#ECE9D8] border border-[#D1D1D1] text-[10px] text-[#444] rounded-sm">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Project Detail Modal */}
-      <AnimatePresence>
-        {selectedProject && (
-          <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/20 backdrop-blur-[1px]">
-            <XPWindow
-              title={selectedProject.title}
-              onClose={() => setSelectedProject(null)}
-              defaultSize={{ width: 600, height: 450 }}
-              defaultPosition={{ x: window.innerWidth / 2 - 300, y: window.innerHeight / 2 - 225 }}
-              className="shadow-2xl"
-            >
-              <div className="p-4 bg-white h-full overflow-y-auto">
-                <div className="flex flex-col md:flex-row gap-4">
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full md:w-1/3 object-contain border border-[#D1D1D1] p-1 bg-white shadow-sm self-start"
-                  />
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#204E80] mb-2 font-tahoma">{selectedProject.title}</h3>
-                    <p className="text-sm text-gray-800 mb-4 font-tahoma leading-relaxed whitespace-pre-wrap">
-                      {selectedProject.description}
-                    </p>
-
-                    <div className="mb-2">
-                      <span className="text-xs font-bold text-[#444] block mb-1">Technologies:</span>
-                      <div className="flex flex-wrap gap-1">
-                        {selectedProject.technologies.map((tech, i) => (
-                          <span key={i} className="px-2 py-0.5 bg-[#ECE9D8] border border-[#D1D1D1] text-[10px] text-[#444] rounded-sm">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </XPWindow>
-          </div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };

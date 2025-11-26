@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 // Programming Languages & Scripting
-import { FaJava, FaPython, FaJs, FaHtml5, FaCss3Alt, FaGitSquare, FaLinux } from "react-icons/fa";
+import { FaJava, FaPython, FaJs, FaHtml5, FaCss3Alt, FaGitSquare, FaLinux, FaChevronUp, FaSync, FaClock, FaQuestionCircle, FaCogs } from "react-icons/fa";
 import { SiC, SiLua, SiLatex } from "react-icons/si";
 import { TbSql, TbAssembly } from "react-icons/tb";
 
@@ -102,7 +102,7 @@ const TechnologiesComponent = () => {
         {/* Title Bar */}
         <div className="h-[30px] bg-gradient-to-b from-[#0058EE] via-[#3593FF] to-[#288EFF] px-2 flex items-center justify-between shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 bg-white rounded-sm opacity-50"></div>
+            <FaCogs className="text-white drop-shadow-md" />
             <span className="text-white font-bold text-[13px] tracking-wide drop-shadow-[1px_1px_1px_rgba(0,0,0,0.5)]" style={{ fontFamily: 'Tahoma' }}>Control Panel</span>
           </div>
           <div className="flex gap-1">
@@ -137,11 +137,14 @@ const TechnologiesComponent = () => {
             <div className="bg-white rounded-t-md overflow-hidden mb-4">
               <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 font-bold text-[#215DC6] text-xs flex justify-between items-center cursor-pointer">
                 <span>Control Panel</span>
-                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px]">^</div>
+                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px] bg-white/50">
+                  <FaChevronUp size={10} />
+                </div>
               </div>
               <div className="p-3 bg-[#D6DFF7]">
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs">
-                  <span className="text-lg">🔄</span> Switch to Classic View
+                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
+                  <FaSync className="text-lg group-hover:text-[#0000FF]" />
+                  <span>Switch to Classic View</span>
                 </div>
               </div>
             </div>
@@ -149,14 +152,18 @@ const TechnologiesComponent = () => {
             <div className="bg-white rounded-t-md overflow-hidden mb-4">
               <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 font-bold text-[#215DC6] text-xs flex justify-between items-center cursor-pointer">
                 <span>See Also</span>
-                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px]">^</div>
+                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px] bg-white/50">
+                  <FaChevronUp size={10} />
+                </div>
               </div>
               <div className="p-3 bg-[#D6DFF7]">
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs">
-                  <span className="text-lg">🕒</span> Windows Update
+                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
+                  <FaClock className="text-lg group-hover:text-[#0000FF]" />
+                  <span>Windows Update</span>
                 </div>
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs">
-                  <span className="text-lg">❓</span> Help and Support
+                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
+                  <FaQuestionCircle className="text-lg group-hover:text-[#0000FF]" />
+                  <span>Help and Support</span>
                 </div>
               </div>
             </div>

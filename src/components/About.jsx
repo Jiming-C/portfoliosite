@@ -80,7 +80,7 @@ const About = () => {
 
                     {/* Canvas Area */}
                     <div className="flex-1 bg-[#808080] p-4 overflow-auto relative">
-                        <div className="bg-white shadow-[2px_2px_0_rgba(0,0,0,0.2)] min-h-full min-w-full p-8 relative">
+                        <div className="bg-white shadow-[2px_2px_0_rgba(0,0,0,0.2)] min-h-full min-w-full p-4 lg:p-8 relative">
                             {/* Resize Handles */}
                             <div className="absolute right-0 bottom-0 w-1.5 h-1.5 bg-[#000080] cursor-nwse-resize"></div>
                             <div className="absolute right-0 top-1/2 w-1.5 h-1.5 bg-[#000080] cursor-ew-resize"></div>
@@ -91,7 +91,7 @@ const About = () => {
                                 {/* Image Selection */}
                                 <div className="relative group cursor-move">
                                     <div className="border border-dashed border-blue-500 p-1">
-                                        <img src={aboutImg} alt="About Me" className="max-w-[250px] border border-gray-300" />
+                                        <img src={aboutImg} alt="About Me" className="w-full max-w-[200px] lg:max-w-[300px] border border-gray-300" />
                                         {/* Selection Handles */}
                                         <div className="absolute -top-1 -left-1 w-2 h-2 bg-white border border-black"></div>
                                         <div className="absolute -top-1 -right-1 w-2 h-2 bg-white border border-black"></div>
@@ -106,8 +106,8 @@ const About = () => {
                                 {/* Text Box */}
                                 <div className="flex-1 relative">
                                     <div className="border border-dashed border-gray-400 p-2 min-h-[200px]">
-                                        <h2 className="text-2xl font-bold font-tahoma text-black mb-4 select-text">About Me</h2>
-                                        <p className="font-tahoma text-sm text-black leading-relaxed whitespace-pre-wrap select-text">
+                                        <h2 className="text-lg md:text-xl lg:text-2xl font-bold font-tahoma text-black mb-4 select-text">About Me</h2>
+                                        <p className="font-tahoma text-xs md:text-sm text-black leading-relaxed whitespace-pre-wrap select-text">
                                             {ABOUT_TEXT}
                                         </p>
                                         {/* Text Cursor */}

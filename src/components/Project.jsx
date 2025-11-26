@@ -57,12 +57,12 @@ const Projects = () => {
           <div className="flex-1 flex flex-col h-full overflow-hidden bg-white">
             {/* Grid Header */}
             <div className="px-4 py-2 border-b border-[#D1D1D1] bg-white shrink-0 flex gap-4 text-xs text-[#444] font-tahoma select-none">
-              <div className="w-1/3 border-r border-[#D1D1D1] px-1">Name</div>
-              <div className="w-1/3 border-r border-[#D1D1D1] px-1">Description</div>
-              <div className="w-1/3 px-1">Technologies</div>
+              <div className="w-1/3 border-r border-[#D1D1D1] px-1 text-xs md:text-sm">Name</div>
+              <div className="w-1/3 border-r border-[#D1D1D1] px-1 text-xs md:text-sm">Description</div>
+              <div className="w-1/3 px-1 text-xs md:text-sm">Technologies</div>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-2 bg-white">
+            <div className="flex-1 overflow-y-auto p-2 lg:p-4 bg-white">
               <div className="space-y-1">
                 {PROJECTS.map((project, index) => (
                   <motion.div
@@ -82,20 +82,20 @@ const Projects = () => {
                         />
                       </div>
                       <div>
-                        <h3 className="font-bold text-sm text-black group-hover:underline cursor-pointer">{project.title}</h3>
-                        <span className="text-xs text-gray-500">File Folder</span>
+                        <h3 className="font-bold text-sm md:text-base text-black group-hover:underline cursor-pointer">{project.title}</h3>
+                        <span className="text-xs md:text-sm text-gray-500">File Folder</span>
                       </div>
                     </div>
 
                     {/* Description */}
-                    <div className="w-full md:w-1/3 text-xs text-black font-tahoma leading-relaxed">
+                    <div className="w-full md:w-1/3 text-xs md:text-sm text-black font-tahoma leading-relaxed">
                       {project.description}
                     </div>
 
                     {/* Technologies */}
                     <div className="w-full md:w-1/3 flex flex-wrap gap-1 content-start">
                       {project.technologies.map((tech, i) => (
-                        <span key={i} className="px-1.5 py-0.5 bg-[#ECE9D8] border border-[#D1D1D1] text-[10px] text-[#444] rounded-sm">
+                        <span key={i} className="px-1.5 py-0.5 bg-[#ECE9D8] border border-[#D1D1D1] text-[10px] md:text-xs text-[#444] rounded-sm">
                           {tech}
                         </span>
                       ))}

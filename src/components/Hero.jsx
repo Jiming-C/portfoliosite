@@ -73,13 +73,13 @@ const Hero = () => {
         </div>
 
         {/* Content */}
-        <div className="p-8 bg-white flex-1 overflow-y-auto">
+        <div className="p-4 lg:p-8 bg-white flex-1 overflow-y-auto">
           {/* Heading */}
           <motion.h2
             variants={container(0)}
             initial="hidden"
             animate="visible"
-            className="text-3xl font-tahoma text-[#003399] mb-8"
+            className="text-xl md:text-2xl lg:text-3xl font-tahoma text-[#003399] mb-8"
           >
             What do you want to know about Jiming?
           </motion.h2>
@@ -109,13 +109,13 @@ const Hero = () => {
               animate="visible"
               className="flex-1"
             >
-              <h3 className="text-2xl font-bold font-tahoma text-black mb-2">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold font-tahoma text-black mb-2">
                 Jiming Chen
               </h3>
-              <div className="text-lg text-gray-700 mb-4 h-8 flex items-center font-tahoma">
+              <div className="text-sm md:text-base lg:text-lg text-gray-700 mb-4 h-8 flex items-center font-tahoma">
                 <span ref={typedElement} className="typed-text"></span>
               </div>
-              <p className="text-sm text-gray-700 leading-relaxed font-tahoma">
+              <p className="text-xs md:text-sm text-gray-700 leading-relaxed font-tahoma">
                 Computer Science Student
               </p>
             </motion.div>
@@ -128,7 +128,7 @@ const Hero = () => {
             animate="visible"
             className="border-t border-gray-300 pt-6"
           >
-            <p className="text-sm text-gray-800 leading-relaxed font-tahoma">
+            <p className="text-xs md:text-sm text-gray-800 leading-relaxed font-tahoma">
               {HERO_CONTENT}
             </p>
           </motion.div>

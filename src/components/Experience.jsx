@@ -99,7 +99,7 @@ const Experience = () => {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 bg-white p-4 overflow-y-auto">
+          <div className="flex-1 bg-white p-2 lg:p-4 overflow-y-auto">
             <div className="space-y-4">
               {EXPERIENCES.map((experience, index) => (
                 <motion.div

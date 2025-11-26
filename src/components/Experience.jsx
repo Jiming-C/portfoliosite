@@ -1,7 +1,10 @@
 import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
 import fileIcon from "../assets/icons/file.ico";
-import { FaArrowLeft, FaArrowRight, FaChevronUp, FaFileAlt, FaWrench, FaDesktop, FaFolder, FaBriefcase } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaBriefcase } from "react-icons/fa";
+import XPExplorerSidebar from "./XPExplorerSidebar";
+import bckIcon from "../assets/icons/bck.ico";
+import fwdIcon from "../assets/icons/fwd.ico";
 
 const Experience = () => {
   return (
@@ -9,7 +12,7 @@ const Experience = () => {
       {/* Windows Explorer Theme */}
       <div className="bg-[#ECE9D8] border-[3px] border-[#0055EA] rounded-t-lg overflow-hidden shadow-md h-full flex flex-col">
         {/* Title Bar */}
-        <div className="h-[30px] bg-gradient-to-b from-[#0058EE] via-[#3593FF] to-[#288EFF] px-2 flex items-center justify-between shadow-[inset_0_1px_0_rgba(255,255,255,0.3)]">
+        <div className="h-[30px] bg-gradient-to-b from-[#0058EE] via-[#3593FF] to-[#288EFF] px-2 flex items-center justify-between shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] shrink-0 select-none">
           <div className="flex items-center gap-2">
             <FaBriefcase className="text-white drop-shadow-md" />
             <span className="text-white font-bold text-[13px] tracking-wide drop-shadow-[1px_1px_1px_rgba(0,0,0,0.5)]" style={{ fontFamily: 'Tahoma' }}>My Work History</span>
@@ -31,7 +34,7 @@ const Experience = () => {
         </div>
 
         {/* Menu Bar */}
-        <div className="bg-[#ECE9D8] border-b border-[#D1D1D1] px-2 py-1 flex gap-4 text-xs font-tahoma text-black">
+        <div className="bg-[#ECE9D8] border-b border-[#D1D1D1] px-2 py-1 flex gap-4 text-xs font-tahoma text-black shrink-0">
           <span>File</span>
           <span>Edit</span>
           <span>View</span>
@@ -40,63 +43,30 @@ const Experience = () => {
           <span>Help</span>
         </div>
 
+
+
+
+
         {/* Toolbar (Simplified) */}
-        <div className="bg-[#ECE9D8] border-b border-[#D1D1D1] px-2 py-2 flex gap-2 items-center overflow-x-auto">
+        <div className="bg-[#ECE9D8] border-b border-[#D1D1D1] px-2 py-2 flex gap-2 items-center overflow-x-auto shrink-0">
           <div className="flex gap-1 flex-shrink-0">
-            <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-[10px] font-bold border border-green-600 shadow-sm">
-              <FaArrowLeft />
+            <div className="w-4 h-4 flex items-center justify-center hover:brightness-110 active:brightness-90 cursor-pointer">
+              <img src={bckIcon} alt="Back" className="w-full h-full object-contain drop-shadow-sm" />
             </div>
-            <div className="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-white text-[10px] font-bold border border-green-600 shadow-sm">
-              <FaArrowRight />
+            <div className="w-4 h-4 flex items-center justify-center hover:brightness-110 active:brightness-90 cursor-pointer">
+              <img src={fwdIcon} alt="Forward" className="w-full h-full object-contain drop-shadow-sm" />
             </div>
           </div>
           <div className="h-6 border-l border-gray-400 mx-1 flex-shrink-0"></div>
-          <div className="bg-white border border-[#7F9DB9] px-2 py-0.5 w-full lg:w-64 text-xs font-tahoma text-black flex items-center overflow-hidden whitespace-nowrap">
-            Address <span className="ml-2 text-gray-600 truncate">C:\Users\Jiming\Experience</span>
+          <div className="flex-1 bg-white border border-[#7F9DB9] px-2 py-0.5 h-[22px] flex items-center overflow-hidden whitespace-nowrap">
+            <span className="text-xs font-tahoma text-black">Address</span>
+            <span className="ml-2 text-gray-600 truncate text-xs font-tahoma">C:\Users\Jiming\Experience</span>
           </div>
         </div>
 
-        <div className="flex flex-1 overflow-hidden">
+        <div className="flex flex-1 overflow-hidden border-t border-[#828790]">
           {/* Sidebar */}
-          <div className="w-48 bg-gradient-to-b from-[#7BA2E7] to-[#6375D6] p-3 hidden lg:block">
-            <div className="bg-white rounded-t-md overflow-hidden mb-4">
-              <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 font-bold text-[#215DC6] text-xs flex justify-between items-center cursor-pointer">
-                <span>System Tasks</span>
-                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px] bg-white/50">
-                  <FaChevronUp size={10} />
-                </div>
-              </div>
-              <div className="p-3 bg-[#D6DFF7]">
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
-                  <FaFileAlt className="text-lg group-hover:text-[#0000FF]" />
-                  <span>View system info</span>
-                </div>
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
-                  <FaWrench className="text-lg group-hover:text-[#0000FF]" />
-                  <span>Change settings</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-t-md overflow-hidden mb-4">
-              <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 font-bold text-[#215DC6] text-xs flex justify-between items-center cursor-pointer">
-                <span>Other Places</span>
-                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px] bg-white/50">
-                  <FaChevronUp size={10} />
-                </div>
-              </div>
-              <div className="p-3 bg-[#D6DFF7]">
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
-                  <FaDesktop className="text-lg group-hover:text-[#0000FF]" />
-                  <span>My Computer</span>
-                </div>
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
-                  <FaFolder className="text-lg group-hover:text-[#0000FF]" />
-                  <span>My Documents</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <XPExplorerSidebar />
 
           {/* Main Content */}
           <div className="flex-1 bg-white p-2 lg:p-4 overflow-y-auto">

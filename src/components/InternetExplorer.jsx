@@ -1,8 +1,9 @@
 import React from 'react';
-import { IoArrowBackCircle, IoArrowForwardCircle } from "react-icons/io5";
-import { FaFolderOpen, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
-import { IoArrowForwardCircle as IoArrowForwardCircleIcon } from "react-icons/io5"; // Renamed to avoid conflict if needed, or just reuse
+import { FaFolderOpen, FaLinkedin, FaGithub } from "react-icons/fa";
 import ieIcon from '../assets/icons/IE.ico';
+import backIcon from '../assets/icons/xp/back.png';
+import forwardIcon from '../assets/icons/xp/forward.png';
+import mailIcon from '../assets/icons/xp/mail.png';
 
 const InternetExplorer = ({ children, contentClassName, onBack, onForward }) => {
     return (
@@ -11,14 +12,14 @@ const InternetExplorer = ({ children, contentClassName, onBack, onForward }) => 
             <div className="flex items-center px-1 py-1 gap-0 border-b border-[#D1D1D1] bg-[#ECE9D8] shadow-[inset_0_-1px_0_rgba(255,255,255,0.5)]">
                 <div className="flex items-center gap-1 mr-2">
                     <ToolbarButton
-                        icon={<IoArrowBackCircle className="text-[#3E9C43] text-[32px] drop-shadow-sm" />}
+                        icon={<img src={backIcon} alt="Back" className="w-8 h-8 object-contain drop-shadow-sm" />}
                         label="Back"
                         showText={true}
                         arrow={true}
                         onClick={onBack}
                     />
                     <ToolbarButton
-                        icon={<IoArrowForwardCircle className="text-[#3E9C43] text-[32px] drop-shadow-sm" />}
+                        icon={<img src={forwardIcon} alt="Forward" className="w-8 h-8 object-contain drop-shadow-sm" />}
                         label="Forward"
                         showText={false}
                         arrow={true}
@@ -49,7 +50,7 @@ const InternetExplorer = ({ children, contentClassName, onBack, onForward }) => 
                         onClick={() => window.open("https://github.com/jimingc", "_blank")}
                     />
                     <ToolbarButton
-                        icon={<FaEnvelope className="text-[#444] text-[24px] drop-shadow-sm" />} // Envelope for Email
+                        icon={<img src={mailIcon} alt="Email" className="w-6 h-6 object-contain drop-shadow-sm" />} // XP Mail Icon
                         label="Email"
                         showText={true}
                         onClick={() => window.location.href = "mailto:jimingchen2015@gmail.com"}
@@ -65,10 +66,10 @@ const InternetExplorer = ({ children, contentClassName, onBack, onForward }) => 
                         <img src={ieIcon} alt="IE" className="w-3 h-3" />
                     </div>
                     <span className="text-sm font-tahoma w-full outline-none">http://www.jimingchen.dev/portfolio</span>
-                    <div className="ml-auto text-gray-400 text-xs">▼</div>
+                    <div className="ml-auto text-xs text-[#444]">&gt;&gt;</div>
                 </div>
                 <button className="flex items-center gap-1 px-1 h-[22px] bg-[#ECE9D8] hover:bg-[#E3E3E3] border border-white/50 rounded-sm active:border-[#888] active:shadow-inner">
-                    <IoArrowForwardCircle className="text-[#3E9C43] text-[18px] drop-shadow-sm" />
+                    <img src={forwardIcon} alt="Go" className="w-4 h-4" />
                     <span className="text-xs text-black">Go</span>
                 </button>
             </div>

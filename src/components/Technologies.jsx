@@ -131,39 +131,45 @@ const TechnologiesComponent = () => {
           <span>Help</span>
         </div>
 
-        <div className="flex flex-1 overflow-hidden">
+        <div className="flex flex-1 overflow-hidden border-t border-[#828790]">
           {/* Sidebar */}
-          <div className="w-48 bg-gradient-to-b from-[#7BA2E7] to-[#6375D6] p-3 hidden lg:block">
-            <div className="bg-white rounded-t-md overflow-hidden mb-4">
-              <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 font-bold text-[#215DC6] text-xs flex justify-between items-center cursor-pointer">
-                <span>Control Panel</span>
-                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px] bg-white/50">
-                  <FaChevronUp size={10} />
+          <div className="w-[200px] bg-gradient-to-b from-[#7BA2E7] to-[#6375D6] p-3 hidden lg:block overflow-y-auto">
+            {/* Control Panel Section */}
+            <div className="bg-white rounded-t-sm overflow-hidden mb-4 shadow-sm">
+              <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 flex justify-between items-center cursor-pointer select-none">
+                <span className="font-bold text-[#215DC6] text-[11px] font-tahoma">Control Panel</span>
+                <div className="w-[18px] h-[18px] rounded-full border border-white/50 flex items-center justify-center bg-gradient-to-br from-white to-[#C6D3F7] shadow-sm">
+                  <FaChevronUp className="text-[#215DC6] text-[8px]" />
                 </div>
               </div>
-              <div className="p-3 bg-[#D6DFF7]">
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
-                  <FaSync className="text-lg group-hover:text-[#0000FF]" />
-                  <span>Switch to Classic View</span>
+              <div className="p-3 bg-[#D6DFF7] flex flex-col gap-1">
+                <div className="flex items-center gap-2 cursor-pointer hover:underline group">
+                  <img src="/src/assets/icons/xp/switch_view.png" alt="" className="w-5 h-5 object-contain" />
+                  <span className="text-[#215DC6] text-[11px] font-tahoma leading-tight">Switch to Classic View</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-t-md overflow-hidden mb-4">
-              <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 font-bold text-[#215DC6] text-xs flex justify-between items-center cursor-pointer">
-                <span>See Also</span>
-                <div className="w-4 h-4 rounded-full border border-[#215DC6] flex items-center justify-center text-[#215DC6] text-[10px] bg-white/50">
-                  <FaChevronUp size={10} />
+            {/* See Also Section */}
+            <div className="bg-white rounded-t-sm overflow-hidden mb-4 shadow-sm">
+              <div className="bg-gradient-to-r from-[#FFFFFF] to-[#C6D3F7] px-3 py-1 flex justify-between items-center cursor-pointer select-none">
+                <span className="font-bold text-[#215DC6] text-[11px] font-tahoma">See Also</span>
+                <div className="w-[18px] h-[18px] rounded-full border border-white/50 flex items-center justify-center bg-gradient-to-br from-white to-[#C6D3F7] shadow-sm">
+                  <FaChevronUp className="text-[#215DC6] text-[8px]" />
                 </div>
               </div>
-              <div className="p-3 bg-[#D6DFF7]">
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
-                  <FaClock className="text-lg group-hover:text-[#0000FF]" />
-                  <span>Windows Update</span>
+              <div className="p-3 bg-[#D6DFF7] flex flex-col gap-1">
+                <div className="flex items-center gap-2 cursor-pointer hover:underline group">
+                  <img src="/src/assets/icons/xp/windows_update.png" alt="" className="w-5 h-5 object-contain" />
+                  <span className="text-[#215DC6] text-[11px] font-tahoma leading-tight">Windows Update</span>
                 </div>
-                <div className="flex items-center gap-2 mb-1 cursor-pointer hover:underline text-[#215DC6] text-xs group">
-                  <FaQuestionCircle className="text-lg group-hover:text-[#0000FF]" />
-                  <span>Help and Support</span>
+                <div className="flex items-center gap-2 cursor-pointer hover:underline group">
+                  <img src="/src/assets/icons/xp/help.png" alt="" className="w-5 h-5 object-contain" />
+                  <span className="text-[#215DC6] text-[11px] font-tahoma leading-tight">Help and Support</span>
+                </div>
+                <div className="flex items-center gap-2 cursor-pointer hover:underline group">
+                  <img src="/src/assets/icons/xp/other_options.png" alt="" className="w-5 h-5 object-contain" />
+                  <span className="text-[#215DC6] text-[11px] font-tahoma leading-tight">Other Control Panel Options</span>
                 </div>
               </div>
             </div>

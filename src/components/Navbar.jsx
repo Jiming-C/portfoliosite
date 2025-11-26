@@ -2,12 +2,10 @@ import React from 'react';
 
 const Navbar = () => {
   const links = [
-    { name: "Home", id: "home" },
     { name: "About", id: "about" },
     { name: "Technologies", id: "technologies" },
     { name: "Experience", id: "experience" },
     { name: "Projects", id: "projects" },
-    // { name: "Contact", id: "contact" }, // Contact is now in the toolbar
   ];
 
   const scrollToSection = (id) => {

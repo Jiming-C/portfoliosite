@@ -46,7 +46,7 @@ const InternetExplorer = ({ children, contentClassName, onBack, onForward }) => 
                         icon={<FaGithub className="text-[#333] text-[24px] drop-shadow-sm" />} // GitHub Logo
                         label="GitHub"
                         showText={true}
-                        onClick={() => window.open("https://github.com/jimingc", "_blank")}
+                        onClick={() => window.open("https://github.com/Jiming-C", "_blank")}
                     />
                     <ToolbarButton
                         icon={<FaEnvelope className="text-[#333] text-[20px] drop-shadow-sm" />} // React Icon for Email
